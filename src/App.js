@@ -47,9 +47,9 @@ const App = () => {
             <div>
               <h2>Edit user</h2>
               <EditUserForm
-                setEditing={setEditing}
-                currentUser={currentUser}
-                updateUser={updateUser}
+                  currentUser={currentUser}
+                  setEditing={setEditing}
+                  updateUser={updateUser}
               />
             </div>
           ) : (
