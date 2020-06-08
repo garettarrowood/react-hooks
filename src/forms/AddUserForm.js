@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const AddUserForm = props => {
-  const initialFormState = { id: null, name: '', username: '' }
+  const initialFormState = { id: null, name: '', username: '', spiritAnimal: '' }
   const [user, setUser] = useState(initialFormState)
 
   const handleInputChange = event => {
@@ -34,6 +34,13 @@ const AddUserForm = props => {
           onChange={handleInputChange}
           type="text"
           value={user.username}
+      />
+      <label>{'Spirit Animal'}</label>
+      <input
+          name="spiritAnimal"
+          onChange={handleInputChange}
+          type="text"
+          value={user.spiritAnimal}
       />
       <button>{'Add new user'}</button>
     </form>

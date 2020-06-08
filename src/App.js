@@ -5,11 +5,11 @@ import EditUserForm from './forms/EditUserForm'
 
 const App = () => {
   const usersData = [
-    { id: 1, name: 'Tania', username: 'floppydiskette' },
-    { id: 2, name: 'Craig', username: 'siliconeidolon' },
-    { id: 3, name: 'Ben', username: 'benisphere' },
+    { id: 1, name: 'Tania', username: 'floppydiskette', spiritAnimal: 'horse' },
+    { id: 2, name: 'Craig', username: 'siliconeidolon', spiritAnimal: 'penguin' },
+    { id: 3, name: 'Ben', username: 'benisphere', spiritAnimal: 'giraffe' },
   ]
-  const initialFormState = { id: null, name: '', username: '' }
+  const initialFormState = { id: null, name: '', username: '', spiritAnimal: '' }
 
   const [users, setUsers] = useState(usersData)
   const [editing, setEditing] = useState(false)
@@ -36,6 +36,12 @@ const App = () => {
     setEditing(false)
 
     setUsers(users.filter(user => user.id !== id))
+  }
+
+  const deleteUsers = () => {
+    setEditing(false)
+
+    setUsers([])
   }
 
   return (
@@ -66,6 +72,11 @@ const App = () => {
               editRow={editRow}
               users={users}
           />
+          <button
+              className="button muted-button"
+              onClick={deleteUsers}>
+            {'Delete All Users'}
+          </button>
         </div>
       </div>
     </div>
